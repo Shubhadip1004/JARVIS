@@ -30,231 +30,240 @@
 
 ## 📦 Installation
 
-### Prerequisites
-- Python 3.7 or higher
-- Windows OS (for app launching features)
-- Microphone
-- Internet connection (for news and jokes)
+  ### Prerequisites
+   - Python 3.7 or higher
+   - Windows OS (for app launching features)
+   - Microphone
+   - Internet connection (for news and jokes)
 
-### Step-by-Step Setup
+  ### Step-by-Step Setup
 
-1. **Clone the repository**
+   1. **Clone the repository**
 
-   git clone https://github.com/Shubhadip1004/JARVIS.git
+          git clone https://github.com/Shubhadip1004/JARVIS.git
    
-   cd JARVIS
+          cd JARVIS
 
-3. **Install Python dependencies**
+   2. **Install Python dependencies**
 
-pip install -r requirements.txt
+          pip install -r requirements.txt
 
-3. **Download Vosk Speech Recognition Model**
+   3. **Download Vosk Speech Recognition Model**
 
-*Download the model (choose one):*
+         *Download the model (choose one):*
+         Small model (recommended):
+   
+            https://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip
 
-Small model (recommended):
+            unzip vosk-model-small-en-us-0.15.zip
 
-https://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip
+         *Or download manually from:*
+      
+            https://alphacephei.com/vosk/models
 
-unzip vosk-model-small-en-us-0.15.zip
+   4. **Set up environment variables**
 
-*Or download manually from:*
+         *Rename the example file:*
+        
+            cp .env.example .env
 
-https://alphacephei.com/vosk/models
+         *Add your NewsAPI key to .env:*
+        
+            Get free API key from https://newsapi.org
 
-4. **Set up environment variables**
-
-*Rename the example file:*
-
-cp .env.example .env
-
-*Add your NewsAPI key to .env:*
-
-Get free API key from https://newsapi.org
 
 
 
 ## 🎯 Usage
 
-### Starting JARVIS
+   ### Starting JARVIS
 
-python src/main.py
+         python src/main.py
 
-### Example Interaction
+   ### Example Interaction
 
-🎤 You: "Hello Jarvis"
+         🎤 You: "Hello Jarvis"
 
-🔊 JARVIS: "Hello [Your Name]! How are you today?"
+         🔊 JARVIS: "Hello [Your Name]! How are you today?"
 
-🎤 You: "What time is it?"
+         🎤 You: "What time is it?"
 
-🔊 JARVIS: "Let me see... Current time is 14 hours, 25 minutes and 10 seconds"
+         🔊 JARVIS: "Let me see... Current time is 14 hours, 25 minutes and 10 seconds"
 
-🎤 You: "Tell me a joke"
+         🎤 You: "Tell me a joke"
 
-🔊 JARVIS: "Why do programmers prefer dark mode? ... Because light attracts bugs!"
+         🔊 JARVIS: "Why do programmers prefer dark mode? ... Because light attracts bugs!"
+
 
 ## 🗣️ Available Commands
 
-### Basic Commands
+   ### Basic Commands
 
-"hello", "hi" - Greet JARVIS
+         "hello", "hi" - Greet JARVIS
 
-"what's your name" - Introduction
+         "what's your name" - Introduction
 
-"what time is it" - Current time
+         "what time is it" - Current time
 
-"what's the date today" - Today's date
+         "what's the date today" - Today's date
 
-"what day is it" - Current weekday
+         "what day is it" - Current weekday
 
-### Applications
+   ### Applications
 
-"open notepad" - Launch Notepad
+         "open notepad" - Launch Notepad
 
-"open calculator" - Open Calculator
+         "open calculator" - Open Calculator
 
-"open browser" - Launch Chrome
+         "open browser" - Launch Chrome
 
-"open word" - Microsoft Word
+         "open word" - Microsoft Word
 
-"open excel" - Microsoft Excel
+         "open excel" - Microsoft Excel
 
-"open powerpoint" - Microsoft PowerPoint
+         "open powerpoint" - Microsoft PowerPoint
 
-"open paint" - MS Paint
+         "open paint" - MS Paint
 
-### Entertainment
+   ### Entertainment
 
-"tell me a joke" - Random dad joke
+         "tell me a joke" - Random dad joke
 
-"what's the news" - Technology headlines
+         "what's the news" - Technology headlines
 
-"play music" - YouTube music
+         "play music" - YouTube music
 
-### System & Web
+   ### System & Web
 
-"open documents" - Documents folder
+         "open documents" - Documents folder
 
-"open downloads" - Downloads folder
+         "open downloads" - Downloads folder
 
-"open google" - Google search
+         "open google" - Google search
 
-"open whatsapp" - WhatsApp Web
+         "open whatsapp" - WhatsApp Web
+
 
 ## 🏗️ Project Structure
 
-JARVIS/
+      JARVIS/
 
-├── src/
+            ├── src/
 
-│   ├── main.py              # 🎯 Main application entry point
+                  │   ├── main.py                 # 🎯 Main application entry point
 
-│   ├── command.py           # ⚡ Command processing & execution
+                  │   ├── command.py              # ⚡ Command processing & execution
 
-│   ├── live_transcriber.py  # 🎤 Voice recognition (Vosk)
+                  │   ├── live_transcriber.py     # 🎤 Voice recognition (Vosk)
 
-│   ├── tts.py              # 🔊 Text-to-speech engine
+                  │   ├── tts.py                  # 🔊 Text-to-speech engine
 
-│   ├── jokes.py            # 😄 Joke API & fallback system
+                  │   ├── jokes.py                # 😄 Joke API & fallback system
 
-│   ├── news.py             # 📰 News headlines fetcher
+                  │   ├── news.py                 # 📰 News headlines fetcher
 
-│   ├── date_and_time.py    # 📅 Date & time utilities
+                  │   ├── date_and_time.py        # 📅 Date & time utilities
 
-│   └── state.py            # 🧠 Application state management
+                  │   └── state.py                # 🧠 Application state management
 
-├── vosk-model-small-en-us-0.15/  # 🗣️ Speech model (download separately)
+         ├── vosk-model-small-en-us-0.15/         # 🗣️ Speech model (download separately)
 
-├── requirements.txt         # 📦 Python dependencies
+         ├── requirements.txt                     # 📦 Python dependencies
 
-├── .env.example            # 🔧 Environment template
+         ├── .env.example                         # 🔧 Environment template
 
-├── .gitignore              # 🙈 Git exclusion rules
+         ├── .gitignore                           # 🙈 Git exclusion rules
 
-└── README.md               # 📖 This file
+         └── README.md                            # 📖 This file
+
 
 ## 🔧 Technical Details
 
-### Voice Recognition
+   ### Voice Recognition
 
-Engine: Vosk (offline, no internet required)
+         Engine: Vosk (offline, no internet required)
 
-Model: vosk-model-small-en-us-0.15
+         Model: vosk-model-small-en-us-0.15
 
-Sample Rate: 16kHz
+         Sample Rate: 16kHz
 
-Latency: Real-time processing
+         Latency: Real-time processing
 
-### Text-to-Speech
+   ### Text-to-Speech
 
-Library: pyttsx3 (cross-platform)
+         Library: pyttsx3 (cross-platform)
 
-Features: Offline operation, multiple voices
+         Features: Offline operation, multiple voices
 
-### External APIs
+   ### External APIs
 
-News: NewsAPI (technology headlines)
+         News: NewsAPI (technology headlines)
 
-Jokes: icanhazdadjoke.com with fallback local jokes
+         Jokes: icanhazdadjoke.com with fallback local jokes
+
 
 ## 🐛 Troubleshooting
 
-### Common Issues
+   ### Common Issues
 
-**Microphone not detected:**
+   **Microphone not detected:**
 
-Check microphone permissions
+         Check microphone permissions
 
-Ensure default recording device is set
+         Ensure default recording device is set
 
-**Vosk model not found:**
+   **Vosk model not found:**
 
- Ensure model is in the correct location:
+         Ensure model is in the correct location:
  
- JARVIS/vosk-model-small-en-us-0.15/
+         JARVIS/vosk-model-small-en-us-0.15/
 
-**Dependencies installation failed:**
+   **Dependencies installation failed:**
 
-Try installing individually:
+         Try installing individually:
 
-pip install vosk
+               pip install vosk
 
-pip install sounddevice
+               pip install sounddevice
 
-pip install pyttsx3
+               pip install pyttsx3
 
-**News not working:**
+   **News not working:**
 
-Verify NewsAPI key in .env file
+         Verify NewsAPI key in .env file
 
-Check internet connection
+         Check internet connection
+
 
 ## 🤝 Contributing
 
-We welcome contributions! Feel free to:
+   We welcome contributions! Feel free to:
 
-Fork the repository
+      Fork the repository
 
-Create a feature branch (git checkout -b feature/AmazingFeature)
+      Create a feature branch (git checkout -b feature/AmazingFeature)
 
-Commit your changes (git commit -m 'Add some AmazingFeature')
+      Commit your changes (git commit -m 'Add some AmazingFeature')
 
-Push to the branch (git push origin feature/AmazingFeature)
+      Push to the branch (git push origin feature/AmazingFeature)
 
-Open a Pull Request
+      Open a Pull Request
+
 
 ## 📝 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+
+   This project is licensed under the MIT License - see the LICENSE file for details.
+
 
 ## 🙏 Acknowledgments
-Vosk for offline speech recognition
 
-NewsAPI for news headlines
+      Vosk for offline speech recognition
 
-icanhazdadjoke for joke API
+      NewsAPI for news headlines
 
-Marvel's Iron Man for inspiration
+      icanhazdadjoke for joke API
+
+      Marvel's Iron Man for inspiration
 
 <div align="center">
 Made with ❤️ by Shubhadip Mahata
