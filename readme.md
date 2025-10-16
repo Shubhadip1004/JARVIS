@@ -39,47 +39,55 @@
 ### Step-by-Step Setup
 
 1. **Clone the repository**
-   ```bash
+
    git clone https://github.com/Shubhadip1004/JARVIS.git
    cd JARVIS
-Install Python dependencies
 
-bash
+2. **Install Python dependencies**
+
 pip install -r requirements.txt
-Download Vosk Speech Recognition Model
 
-bash
+3. **Download Vosk Speech Recognition Model**
+
 # Download the model (choose one):
 # Small model (recommended):
-wget https://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip
+https://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip
 unzip vosk-model-small-en-us-0.15.zip
 
 # Or download manually from:
-# https://alphacephei.com/vosk/models
-Set up environment variables
+https://alphacephei.com/vosk/models
 
-bash
+4. **Set up environment variables**
+
 # Rename the example file:
 cp .env.example .env
 
 # Add your NewsAPI key to .env:
 # Get free API key from https://newsapi.org
-🎯 Usage
-Starting JARVIS
-bash
+
+
+
+## 🎯 Usage
+
+### Starting JARVIS
+
 python src/main.py
-Example Interaction
-text
+
+### Example Interaction
+
 🎤 You: "Hello Jarvis"
 🔊 JARVIS: "Hello [Your Name]! How are you today?"
 
 🎤 You: "What time is it?"
-🔊 JARVIS: "Let me see... Current time is 14:30 hours, 25 minutes and 10 seconds"
+🔊 JARVIS: "Let me see... Current time is 14 hours, 25 minutes and 10 seconds"
 
 🎤 You: "Tell me a joke"
 🔊 JARVIS: "Why do programmers prefer dark mode? ... Because light attracts bugs!"
-🗣️ Available Commands
-Basic Commands
+
+## 🗣️ Available Commands
+
+### Basic Commands
+
 "hello", "hi" - Greet JARVIS
 
 "what's your name" - Introduction
@@ -90,7 +98,8 @@ Basic Commands
 
 "what day is it" - Current weekday
 
-Applications
+### Applications
+
 "open notepad" - Launch Notepad
 
 "open calculator" - Open Calculator
@@ -105,14 +114,16 @@ Applications
 
 "open paint" - MS Paint
 
-Entertainment
+### Entertainment
+
 "tell me a joke" - Random dad joke
 
 "what's the news" - Technology headlines
 
 "play music" - YouTube music
 
-System & Web
+### System & Web
+
 "open documents" - Documents folder
 
 "open downloads" - Downloads folder
@@ -121,8 +132,8 @@ System & Web
 
 "open whatsapp" - WhatsApp Web
 
-🏗️ Project Structure
-text
+## 🏗️ Project Structure
+
 JARVIS/
 ├── src/
 │   ├── main.py              # 🎯 Main application entry point
@@ -138,8 +149,11 @@ JARVIS/
 ├── .env.example            # 🔧 Environment template
 ├── .gitignore              # 🙈 Git exclusion rules
 └── README.md               # 📖 This file
-🔧 Technical Details
-Voice Recognition
+
+## 🔧 Technical Details
+
+### Voice Recognition
+
 Engine: Vosk (offline, no internet required)
 
 Model: vosk-model-small-en-us-0.15
@@ -148,43 +162,48 @@ Sample Rate: 16kHz
 
 Latency: Real-time processing
 
-Text-to-Speech
+### Text-to-Speech
+
 Library: pyttsx3 (cross-platform)
 
 Features: Offline operation, multiple voices
 
-External APIs
+### External APIs
+
 News: NewsAPI (technology headlines)
 
 Jokes: icanhazdadjoke.com with fallback local jokes
 
-🐛 Troubleshooting
-Common Issues
-Microphone not detected:
+## 🐛 Troubleshooting
+
+### Common Issues
+
+**Microphone not detected:**
 
 Check microphone permissions
 
 Ensure default recording device is set
 
-Vosk model not found:
+**Vosk model not found:**
 
-bash
-# Ensure model is in the correct location:
-# JARVIS/vosk-model-small-en-us-0.15/
-Dependencies installation failed:
+ Ensure model is in the correct location:
+ JARVIS/vosk-model-small-en-us-0.15/
 
-bash
-# Try installing individually:
+**Dependencies installation failed:**
+
+Try installing individually:
+
 pip install vosk
 pip install sounddevice
 pip install pyttsx3
-News not working:
+
+**News not working:**
 
 Verify NewsAPI key in .env file
 
 Check internet connection
 
-🤝 Contributing
+## 🤝 Contributing
 We welcome contributions! Feel free to:
 
 Fork the repository
@@ -197,10 +216,10 @@ Push to the branch (git push origin feature/AmazingFeature)
 
 Open a Pull Request
 
-📝 License
+## 📝 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-🙏 Acknowledgments
+## 🙏 Acknowledgments
 Vosk for offline speech recognition
 
 NewsAPI for news headlines
@@ -214,4 +233,4 @@ Made with ❤️ by Shubhadip Mahata
 
 "Sometimes you gotta run before you can walk." - Tony Stark
 
-</div> ```
+</div>
