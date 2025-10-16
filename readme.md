@@ -1,18 +1,217 @@
-# JARVIS Voice Assistant
+# 🎙️ JARVIS Voice Assistant
 
-A Python-based voice assistant inspired by JARVIS from Iron Man.
+<div align="center">
 
-## Features
-- Voice recognition
-- Text-to-speech responses
-- Date and time information
-- News headlines
-- Jokes
-- Application launching
-- Web browsing
+![Python](https://img.shields.io/badge/Python-3.7+-blue.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey.svg)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)
 
-## Installation
+*A Python-powered voice assistant inspired by Tony Stark's JARVIS from Iron Man*
 
-1. Install Python dependencies:
-```bash
+[Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Commands](#-commands) • [Project Structure](#-project-structure)
+
+</div>
+
+---
+
+## 🚀 Features
+
+| Category | Features |
+|----------|----------|
+| **🎤 Voice Recognition** | Real-time speech-to-text using Vosk (offline) |
+| **🔊 Speech Synthesis** | Text-to-speech responses with pyttsx3 |
+| **📅 Date & Time** | Current date, time, and weekday information |
+| **📰 News** | Latest technology news headlines |
+| **😄 Entertainment** | Random dad jokes API with fallback jokes |
+| **🖥️ System Control** | Launch applications (Windows) |
+| **📁 File Management** | Open Documents and Downloads folders |
+| **🌐 Web Integration** | Open websites and play YouTube music |
+
+## 📦 Installation
+
+### Prerequisites
+- Python 3.7 or higher
+- Windows OS (for app launching features)
+- Microphone
+- Internet connection (for news and jokes)
+
+### Step-by-Step Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Shubhadip1004/JARVIS.git
+   cd JARVIS
+Install Python dependencies
+
+bash
 pip install -r requirements.txt
+Download Vosk Speech Recognition Model
+
+bash
+# Download the model (choose one):
+# Small model (recommended):
+wget https://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip
+unzip vosk-model-small-en-us-0.15.zip
+
+# Or download manually from:
+# https://alphacephei.com/vosk/models
+Set up environment variables
+
+bash
+# Rename the example file:
+cp .env.example .env
+
+# Add your NewsAPI key to .env:
+# Get free API key from https://newsapi.org
+🎯 Usage
+Starting JARVIS
+bash
+python src/main.py
+Example Interaction
+text
+🎤 You: "Hello Jarvis"
+🔊 JARVIS: "Hello [Your Name]! How are you today?"
+
+🎤 You: "What time is it?"
+🔊 JARVIS: "Let me see... Current time is 14:30 hours, 25 minutes and 10 seconds"
+
+🎤 You: "Tell me a joke"
+🔊 JARVIS: "Why do programmers prefer dark mode? ... Because light attracts bugs!"
+🗣️ Available Commands
+Basic Commands
+"hello", "hi" - Greet JARVIS
+
+"what's your name" - Introduction
+
+"what time is it" - Current time
+
+"what's the date today" - Today's date
+
+"what day is it" - Current weekday
+
+Applications
+"open notepad" - Launch Notepad
+
+"open calculator" - Open Calculator
+
+"open browser" - Launch Chrome
+
+"open word" - Microsoft Word
+
+"open excel" - Microsoft Excel
+
+"open powerpoint" - Microsoft PowerPoint
+
+"open paint" - MS Paint
+
+Entertainment
+"tell me a joke" - Random dad joke
+
+"what's the news" - Technology headlines
+
+"play music" - YouTube music
+
+System & Web
+"open documents" - Documents folder
+
+"open downloads" - Downloads folder
+
+"open google" - Google search
+
+"open whatsapp" - WhatsApp Web
+
+🏗️ Project Structure
+text
+JARVIS/
+├── src/
+│   ├── main.py              # 🎯 Main application entry point
+│   ├── command.py           # ⚡ Command processing & execution
+│   ├── live_transcriber.py  # 🎤 Voice recognition (Vosk)
+│   ├── tts.py              # 🔊 Text-to-speech engine
+│   ├── jokes.py            # 😄 Joke API & fallback system
+│   ├── news.py             # 📰 News headlines fetcher
+│   ├── date_and_time.py    # 📅 Date & time utilities
+│   └── state.py            # 🧠 Application state management
+├── vosk-model-small-en-us-0.15/  # 🗣️ Speech model (download separately)
+├── requirements.txt         # 📦 Python dependencies
+├── .env.example            # 🔧 Environment template
+├── .gitignore              # 🙈 Git exclusion rules
+└── README.md               # 📖 This file
+🔧 Technical Details
+Voice Recognition
+Engine: Vosk (offline, no internet required)
+
+Model: vosk-model-small-en-us-0.15
+
+Sample Rate: 16kHz
+
+Latency: Real-time processing
+
+Text-to-Speech
+Library: pyttsx3 (cross-platform)
+
+Features: Offline operation, multiple voices
+
+External APIs
+News: NewsAPI (technology headlines)
+
+Jokes: icanhazdadjoke.com with fallback local jokes
+
+🐛 Troubleshooting
+Common Issues
+Microphone not detected:
+
+Check microphone permissions
+
+Ensure default recording device is set
+
+Vosk model not found:
+
+bash
+# Ensure model is in the correct location:
+# JARVIS/vosk-model-small-en-us-0.15/
+Dependencies installation failed:
+
+bash
+# Try installing individually:
+pip install vosk
+pip install sounddevice
+pip install pyttsx3
+News not working:
+
+Verify NewsAPI key in .env file
+
+Check internet connection
+
+🤝 Contributing
+We welcome contributions! Feel free to:
+
+Fork the repository
+
+Create a feature branch (git checkout -b feature/AmazingFeature)
+
+Commit your changes (git commit -m 'Add some AmazingFeature')
+
+Push to the branch (git push origin feature/AmazingFeature)
+
+Open a Pull Request
+
+📝 License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+🙏 Acknowledgments
+Vosk for offline speech recognition
+
+NewsAPI for news headlines
+
+icanhazdadjoke for joke API
+
+Marvel's Iron Man for inspiration
+
+<div align="center">
+Made with ❤️ by Shubhadip Mahata
+
+"Sometimes you gotta run before you can walk." - Tony Stark
+
+</div> ```
