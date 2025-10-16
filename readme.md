@@ -41,28 +41,35 @@
 1. **Clone the repository**
 
    git clone https://github.com/Shubhadip1004/JARVIS.git
+   
    cd JARVIS
 
-2. **Install Python dependencies**
+3. **Install Python dependencies**
 
 pip install -r requirements.txt
 
 3. **Download Vosk Speech Recognition Model**
 
 *Download the model (choose one):*
+
 Small model (recommended):
+
 https://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip
+
 unzip vosk-model-small-en-us-0.15.zip
 
 *Or download manually from:*
+
 https://alphacephei.com/vosk/models
 
 4. **Set up environment variables**
 
 *Rename the example file:*
+
 cp .env.example .env
 
 *Add your NewsAPI key to .env:*
+
 Get free API key from https://newsapi.org
 
 
@@ -76,12 +83,15 @@ python src/main.py
 ### Example Interaction
 
 🎤 You: "Hello Jarvis"
+
 🔊 JARVIS: "Hello [Your Name]! How are you today?"
 
 🎤 You: "What time is it?"
+
 🔊 JARVIS: "Let me see... Current time is 14 hours, 25 minutes and 10 seconds"
 
 🎤 You: "Tell me a joke"
+
 🔊 JARVIS: "Why do programmers prefer dark mode? ... Because light attracts bugs!"
 
 ## 🗣️ Available Commands
@@ -135,19 +145,33 @@ python src/main.py
 ## 🏗️ Project Structure
 
 JARVIS/
+
 ├── src/
+
 │   ├── main.py              # 🎯 Main application entry point
+
 │   ├── command.py           # ⚡ Command processing & execution
+
 │   ├── live_transcriber.py  # 🎤 Voice recognition (Vosk)
+
 │   ├── tts.py              # 🔊 Text-to-speech engine
+
 │   ├── jokes.py            # 😄 Joke API & fallback system
+
 │   ├── news.py             # 📰 News headlines fetcher
+
 │   ├── date_and_time.py    # 📅 Date & time utilities
+
 │   └── state.py            # 🧠 Application state management
+
 ├── vosk-model-small-en-us-0.15/  # 🗣️ Speech model (download separately)
+
 ├── requirements.txt         # 📦 Python dependencies
+
 ├── .env.example            # 🔧 Environment template
+
 ├── .gitignore              # 🙈 Git exclusion rules
+
 └── README.md               # 📖 This file
 
 ## 🔧 Technical Details
@@ -187,6 +211,7 @@ Ensure default recording device is set
 **Vosk model not found:**
 
  Ensure model is in the correct location:
+ 
  JARVIS/vosk-model-small-en-us-0.15/
 
 **Dependencies installation failed:**
@@ -194,7 +219,9 @@ Ensure default recording device is set
 Try installing individually:
 
 pip install vosk
+
 pip install sounddevice
+
 pip install pyttsx3
 
 **News not working:**
@@ -204,6 +231,7 @@ Verify NewsAPI key in .env file
 Check internet connection
 
 ## 🤝 Contributing
+
 We welcome contributions! Feel free to:
 
 Fork the repository
