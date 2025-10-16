@@ -49,21 +49,21 @@ pip install -r requirements.txt
 
 3. **Download Vosk Speech Recognition Model**
 
-# Download the model (choose one):
-# Small model (recommended):
+*Download the model (choose one):*
+Small model (recommended):
 https://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip
 unzip vosk-model-small-en-us-0.15.zip
 
-# Or download manually from:
+*Or download manually from:*
 https://alphacephei.com/vosk/models
 
 4. **Set up environment variables**
 
-# Rename the example file:
+*Rename the example file:*
 cp .env.example .env
 
-# Add your NewsAPI key to .env:
-# Get free API key from https://newsapi.org
+*Add your NewsAPI key to .env:*
+Get free API key from https://newsapi.org
 
 
 
