@@ -14,7 +14,7 @@ def get_news_headlines(api_key, category="technology", country="us", max_article
 
 # Example usage
 
-# api_key = "9bc9e519c01341b785a6b0702e969370"
+# api_key = ""
 # headlines = get_news_headlines(api_key)
 # for idx, headline in enumerate(headlines, 1):
 #     print(f"{idx}. {headline}")
