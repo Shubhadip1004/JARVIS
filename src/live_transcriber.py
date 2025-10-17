@@ -41,10 +41,9 @@ def transcriber():
                     if text:  # only execute if something was recognized
                         return text
                     return
-        else:
-                res = json.loads(rec.PartialResult())
-                print("[partial]", res.get("partial", ""), end='\r')
-                return
+            else:
+                    res = json.loads(rec.PartialResult())
+                    return res.get("partial", "")+'\r'
         # except:
         #     pass
         # except KeyboardInterrupt:
