@@ -12,7 +12,7 @@ username = os.getlogin()
 def main():
     speak(f"Hello {username}, I am your personal AI assistant, J.A.R.V.I.S.")
     speak("But you can call me Jarvis.")
-    speak("I am an AI assistant. How can I help you today?")
+    speak("How can I help you today?")
     
     while True:
         try: 
