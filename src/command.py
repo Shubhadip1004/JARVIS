@@ -171,13 +171,13 @@ def execute_command(command):
         else:
             state.offline_count = 0
         
-        [setup, punchline] = get_random_joke(is_online)
+        [setup, punchline] = get_random_joke(is_online())
         speak(setup)    
         time.sleep(1.5)  # dramatic pause
         speak(punchline)
         state.unknown_command = 0
         
-        if state.offline_count >= 10:
+        if state.offline_count >= 6:
             speak("You can hear more jokes by connecting to the internet.")
         
     # Implementing GPT functionality
@@ -237,5 +237,5 @@ def execute_command(command):
         state.unknown_command += 1
         if state.unknown_command >= 3:
             time.sleep(1)
-            speak("You can stop this conversation by pressing Control and C keys together.")
+            speak("You can stop this conversation by saying quit or exit.")
         
