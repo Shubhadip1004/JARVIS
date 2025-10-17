@@ -31,7 +31,6 @@ def transcriber():
     with sd.RawInputStream(samplerate=SAMPLE_RATE, blocksize=CHUNK, dtype='int16', 
                            channels=1, callback=audio_callback):
         print("Listening... ")
-        # try:
         while True:
             data = q.get()
             if rec.AcceptWaveform(data):
@@ -41,12 +40,4 @@ def transcriber():
                     if text:  # only execute if something was recognized
                         return text
                     return
-            else:
-                    res = json.loads(rec.PartialResult())
-                    return res.get("partial", "")+'\r'
-        # except:
-        #     pass
-        # except KeyboardInterrupt:
-        #     print("\nStopping...")
-        #     print(json.loads(rec.FinalResult()))
-        #     sys.exit(0)
+
