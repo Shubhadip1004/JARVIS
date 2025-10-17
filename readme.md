@@ -9,7 +9,7 @@
 
 *A Python-powered voice assistant inspired by Tony Stark's JARVIS from Iron Man*
 
-[Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Commands](#-commands) • [Project Structure](#-project-structure)
+[Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Available Commands](#-available-commands) • [Project Structure](#-project-structure)
 
 </div>
 
