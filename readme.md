@@ -15,6 +15,8 @@
 
 ---
 
+
+<a id="features"></a>
 ## 🚀 Features
 
 | Category | Features |
@@ -33,6 +35,7 @@
 | **📡 Online/Offline Mode** | Seamless switching between online and offline features |
 
 
+<a id="installation"></a>
 ## 📦 Installation
 
   ### Prerequisites
@@ -88,7 +91,7 @@
 
 
 
-
+<a id="usage"></a>
 ## 🎯 Usage
 
    ### Starting JARVIS
@@ -110,6 +113,7 @@
          🔊 JARVIS: "Why do programmers prefer dark mode? ... Because light attracts bugs!"
 
 
+<a id="available-commands"></a>
 ## 🗣️ Available Commands
 
    ### Basic Commands
@@ -164,7 +168,7 @@
          
          "explain [concept]" - Detailed explanations  
 
-
+<a id="project-structure"></a>
 ## 🏗️ Project Structure
 
       JARVIS/
