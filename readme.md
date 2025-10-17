@@ -27,6 +27,11 @@
 | **🖥️ System Control** | Launch applications (Windows) |
 | **📁 File Management** | Open Documents and Downloads folders |
 | **🌐 Web Integration** | Open websites and play YouTube music |
+| **🤖 AI Chat** | GPT integration via OpenRouter for intelligent conversations |
+| **🌐 Connection Monitoring** | Automatic internet detection with graceful offline fallback |
+| **🔍 Smart Question Answering** | Ask questions and get AI-powered explanations |
+| **📡 Online/Offline Mode** | Seamless switching between online and offline features |
+
 
 ## 📦 Installation
 
@@ -67,9 +72,19 @@
         
             cp .env.example .env
 
-         *Add your NewsAPI key to .env:*
-        
-            Get free API key from https://newsapi.org
+         *Add your API keys to .env:*
+
+            Get free API keys from:
+
+                 - OpenRouter: https://openrouter.ai/ for GPT access
+      
+                 - NewsAPI: https://newsapi.org/ for news headlines
+
+            Your .env file should contain:
+
+                   gpt_api_key=your_openrouter_api_key_here
+      
+                   news_api_key=your_newsapi_key_here
 
 
 
@@ -143,6 +158,12 @@
 
          "open whatsapp" - WhatsApp Web
 
+   ### Ask Questions
+
+         "ask [question]" - AI-powered answers on any topic  
+         
+         "explain [concept]" - Detailed explanations  
+
 
 ## 🏗️ Project Structure
 
@@ -164,17 +185,21 @@
 
                   │   ├── date_and_time.py        # 📅 Date & time utilities
 
+                  │   ├── connection_checker.py   # 🌐 Internet status & monitoring
+
+                  │   ├── gpt_integration.py      # 🤖 AI chat with GPT models
+
                   │   └── state.py                # 🧠 Application state management
 
-         ├── vosk-model-small-en-us-0.15/         # 🗣️ Speech model (download separately)
+             ├── vosk-model-small-en-us-0.15/     # 🗣️ Speech model (download separately)
 
-         ├── requirements.txt                     # 📦 Python dependencies
+             ├── requirements.txt                 # 📦 Python dependencies
 
-         ├── .env.example                         # 🔧 Environment template
+             ├── .env.example                     # 🔧 Environment template
 
-         ├── .gitignore                           # 🙈 Git exclusion rules
+             ├── .gitignore                       # 🙈 Git exclusion rules
 
-         └── README.md                            # 📖 This file
+             └── README.md                        # 📖 This file
 
 
 ## 🔧 Technical Details
@@ -198,6 +223,8 @@
    ### External APIs
 
          News: NewsAPI (technology headlines)
+
+         GPT: OpenAI (deepseek-r1t2-chimera model by tngtech)
 
          Jokes: icanhazdadjoke.com with fallback local jokes
 
@@ -228,12 +255,19 @@
 
                pip install pyttsx3
 
+               pip install openai
+
    **News not working:**
 
          Verify NewsAPI key in .env file
 
          Check internet connection
 
+   **GPT not working:**
+
+         Verify GPT AI key in .env file
+
+         Check internet connection
 
 ## 🤝 Contributing
 
@@ -260,6 +294,8 @@
       Vosk for offline speech recognition
 
       NewsAPI for news headlines
+
+      OpenAI & tngtech for trained GPT model (deepseek-r1t2-chimera model)
 
       icanhazdadjoke for joke API
 
