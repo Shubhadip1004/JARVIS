@@ -1,11 +1,12 @@
 import requests
 import random
 
-def get_random_joke():
+
+def get_random_joke(is_online):
     url = "https://icanhazdadjoke.com/"
     headers = {"Accept": "application/json"}
     response = requests.get(url, headers=headers)
-    if response.status_code == 200:
+    if is_online and response.status_code == 200:
         joke = response.json()["joke"]
         setup = joke.split("?")[0] + "?"
         punchline = joke.split("?")[1].strip() if "?" in joke else ""
