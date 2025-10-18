@@ -308,6 +308,6 @@
 <div align="center">
 Made with ❤️ by Shubhadip Mahata
 
-"Sometimes you gotta run before you can walk." - Tony Stark
+"I came to realize that I had more to offer this world than just making things that blow up." - Tony Stark
 
 </div>
