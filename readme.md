@@ -25,6 +25,7 @@
 | **🔊 Speech Synthesis** | Text-to-speech responses with pyttsx3 |
 | **📅 Date & Time** | Current date, time, and weekday information |
 | **📰 News** | Latest technology news headlines |
+| **🌤️ Weather** | Current weather and forecasts for any city |
 | **😄 Entertainment** | Random dad jokes API with fallback jokes |
 | **🖥️ System Control** | Launch applications (Windows) |
 | **📁 File Management** | Open Documents and Downloads folders |
@@ -83,11 +84,15 @@
       
                  - NewsAPI: https://newsapi.org/ for news headlines
 
+                 - VisualCrossing Weather: https://weather.visualcrossing.com for weather forcasting
+
             Your .env file should contain:
 
                    gpt_api_key=your_openrouter_api_key_here
       
                    news_api_key=your_newsapi_key_here
+
+                   weather_api_key=your_visualcrossing_weather_api_key_here
 
 
 
@@ -150,6 +155,8 @@
 
          "what's the news" - Technology headlines
 
+         "what's the weather like in [place]" - Weather forecasting
+
          "play music" - YouTube music
 
    ### System & Web
@@ -193,6 +200,8 @@
 
                   │   ├── gpt_integration.py      # 🤖 AI chat with GPT models
 
+                  │   ├── weather.py              # 🌤️ Weather data & forecasts
+
                   │   └── state.py                # 🧠 Application state management
 
              ├── vosk-model-small-en-us-0.15/     # 🗣️ Speech model (download separately)
@@ -232,6 +241,8 @@
 
          Jokes: icanhazdadjoke.com with fallback local jokes
 
+         Weather Forecasting: VisualCrossing Weather 
+
 
 ## 🐛 Troubleshooting
 
@@ -261,6 +272,8 @@
 
                pip install openai
 
+               pip install urllib.requests
+
    **News not working:**
 
          Verify NewsAPI key in .env file
@@ -270,6 +283,12 @@
    **GPT not working:**
 
          Verify GPT AI key in .env file
+
+         Check internet connection
+
+  **Weather not working:**
+
+         Verify Weather AI key in .env file
 
          Check internet connection
 
@@ -302,6 +321,8 @@
       OpenAI & tngtech for trained GPT model (deepseek-r1t2-chimera model)
 
       icanhazdadjoke for joke API
+
+      VisualCrossing for Weather API
 
       Marvel's Iron Man for inspiration
 
