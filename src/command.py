@@ -8,6 +8,7 @@ from news import get_news_headlines
 from date_and_time import date_today, current_time, weekday
 from gpt_integration import ask_model
 from connection_checker import is_online, connection_message
+from weather import get_weather
 import state
 
 
@@ -16,26 +17,10 @@ username = os.getlogin()
 
 def execute_command(command):
     command = command.lower()
-
-    # Greetings
-    
-    if "hello" in command or "hi" in command:
-        speak(f"Hello {username}! How are you today?")
-        state.unknown_command = 0
-    
-    elif "can you do" in command or "you do" in command:
-        speak("I can tell you the current date and time, open applications and folders, play YouTube videos, tell jokes, and give you the latest news headlines.")
-        state.unknown_command = 0
-    
-    elif "name" in command:
-        speak(f"Hello, {username}")
-        time.sleep(0.4)
-        speak("I am JARVIS, your personal AI assistant.")
-        state.unknown_command = 0
     
     # Date and Time
     
-    elif "date" in command or "today" in command:
+    if "date" in command or "today" in command:
         speak("Let me see...")
         time.sleep(0.4)
         speak("Today's date is " + date_today())
@@ -220,6 +205,50 @@ def execute_command(command):
             state.offline_count = 0
         
         speak(connection_message(state.offline_count))
+    
+    # weather command
+    
+    elif "weather" in command or "temperature" in command or "forecast" in command:
+        state.unknown_command = 0
+        if is_online():
+            speak("Please tell me the city name.")
+            time.sleep(0.5)
+            city_name = input("City name: ").lower()
+            speak(f"Getting weather information for {city_name}.")
+            weather_info = get_weather(city_name, is_online=is_online())
+            
+            if weather_info[1]:
+                weather_info = weather_info[0]
+                weather_res = weather_info[0:5]  
+                if 'Alerts:' in command:
+                    weather_res += weather_info[18:]
+                for line in weather_res:
+                    speak(line)
+                    time.sleep(0.5)
+            else:
+                speak(weather_info[0])
+            state.offline_count = 0
+        else:
+            speak("I need an internet connection to get the weather information.")
+            state.offline_count += 1
+            
+        speak(connection_message(state.offline_count))
+
+# Greetings
+    
+    if "hello" in command or "hi" in command:
+        speak(f"Hello {username}! How are you today?")
+        state.unknown_command = 0
+    
+    elif "can you do" in command or "you do" in command:
+        speak("I can tell you the current date and time, open applications and folders, play YouTube videos, tell jokes, and give you the latest news headlines.")
+        state.unknown_command = 0
+    
+    elif "name" in command:
+        speak(f"Hello, {username}")
+        time.sleep(0.4)
+        speak("I am JARVIS, your personal AI assistant.")
+        state.unknown_command = 0
     
     # exit command
     
