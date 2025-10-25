@@ -40,7 +40,7 @@
 ## 📦 Installation
 
   ### Prerequisites
-   - Python 3.7 or higher
+   - Python 3.8 or higher
    - Windows OS (for app launching features)
    - Microphone
    - Internet connection (for news and jokes)
