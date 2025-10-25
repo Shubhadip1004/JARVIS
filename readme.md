@@ -70,7 +70,11 @@
       
             https://alphacephei.com/vosk/models
 
-   4. **Set up environment variables**
+         *Place the vosk-model inside model folder*
+
+            model/vosk-model-small-en-us-0.15
+
+   5. **Set up environment variables**
 
          *Rename the example file:*
         
@@ -204,7 +208,9 @@
 
                   │   └── state.py                # 🧠 Application state management
 
-             ├── vosk-model-small-en-us-0.15/     # 🗣️ Speech model (download separately)
+             ├── model/     
+
+                  │   └── vosk-model-small-en-us-0.15
 
              ├── requirements.txt                 # 📦 Python dependencies
 
@@ -258,7 +264,7 @@
 
          Ensure model is in the correct location:
  
-         JARVIS/vosk-model-small-en-us-0.15/
+         JARVIS/model/vosk-model-small-en-us-0.15/
 
    **Dependencies installation failed:**
 
