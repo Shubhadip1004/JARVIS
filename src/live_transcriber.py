@@ -1,4 +1,4 @@
-# live_vosk.py
+# live_transcriber.py
 import queue
 import sounddevice as sd
 from vosk import Model, KaldiRecognizer, SetLogLevel
@@ -10,7 +10,7 @@ username = os.getlogin()
 
 SetLogLevel(-1)
 
-MODEL_PATH = "vosk-model-small-en-us-0.15" 
+MODEL_PATH = "model/vosk-model-small-en-us-0.15" 
 
 
 SAMPLE_RATE = 16000
