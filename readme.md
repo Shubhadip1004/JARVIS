@@ -39,6 +39,17 @@
 <a id="installation"></a>
 ## 📦 Installation
 
+  1. Download the **"Source code (zip)"** file below
+  2. Extract to your preferred location
+  3. Run `install.bat` (Windows) to install dependencies
+  4. Follow setup instructions in README.md
+  5. Run `python main.py` to start JARVIS
+
+  ### Setup Required
+    - Download Vosk model from: https://alphacephei.com/vosk/models
+    - Extract to `model/vosk-model-small-en-us-0.15/`
+    - Create `.env` file with your API keys (see `.env.example`)
+
   ### Prerequisites
    - Python 3.8 or higher
    - Windows OS (for app launching features)
